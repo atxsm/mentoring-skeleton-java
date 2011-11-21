@@ -94,8 +94,8 @@ slightly dated.  For the Java platform, it's often easier to download and
 unpack zip/tarballs to a home directory, and set a few environment variables
 like PATH.
 
-Then assuming you have your environment's paths set correctly, you should be
-able to run::
+Assuming you have your environment's paths set correctly, you should be able to
+run::
 
     $ gradle
     :clean
@@ -112,15 +112,12 @@ able to run::
 
     Total time: 6.075 secs
 
-
 which as you can see cleaned all previously generated artifacts, compiled our
 production code and test code, and ran all tests.
 
 All code under src/main/java is automatically managed by the system as
 production code.  By default, every Junit test found under src/main/test is
-included in the suite of tests run.  There's already stub production code
-(App.java) and stub test code (AppTest.java) in these directories to get you
-started.
+included in the suite of tests run.
 
 
 Some Details
