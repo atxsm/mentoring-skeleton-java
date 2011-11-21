@@ -95,7 +95,7 @@ unpack zip/tarballs to a home directory, and set a few environment variables
 like PATH.
 
 Then assuming you have your environment's paths set correctly, you should be
-able to run
+able to run::
 
     $ gradle
     :clean
