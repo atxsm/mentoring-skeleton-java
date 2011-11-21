@@ -94,8 +94,8 @@ slightly dated.  For the Java platform, it's often easier to download and
 unpack zip/tarballs to a home directory, and set a few environment variables
 like PATH.
 
-Assuming you have your environment's paths set correctly, you should be able to
-run::
+Assuming you've installed everything and set your environment's paths set
+correctly, you should be able to run::
 
     $ gradle
     :clean
