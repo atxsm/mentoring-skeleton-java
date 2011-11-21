@@ -1,6 +1,6 @@
-====================================
-Simple Java Project Skeleton Project
-====================================
+============================
+Simple Java Skeleton Project
+============================
 
 
 Purpose
