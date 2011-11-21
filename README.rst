@@ -25,47 +25,40 @@ This project currently advocates the use of `Gradle <http://gradle.org>`_.
 There are some aspects of Gradle that we think students should learn to seek in
 any build system:
 
-    Configuration over Convention
+Configuration over Convention
+    A few lines of code should go a long way.  We strive for high degrees of
+    reuse in our code, so why would we accept a build system that asks us to
+    copy and paste bloated configuration files from project to project?  One
+    way to avoid this copy and pasting is to have sensible defaults.  Gradle
+    provides tons of defaults apropos to a Java project with one line:  "apply
+    plugin: 'java'" in a single file called "build.gradle".
 
-        A few lines of code should go a long way.  We strive for high degrees
-        of reuse in our code, so why would we accept a build system that asks
-        us to copy and paste bloated configuration files from project to
-        project?  One way to avoid this copy and pasting is to have sensible
-        defaults.  Gradle provides tons of defaults apropos to a Java project
-        with one line:  "apply plugin: 'java'" in a single file called
-        "build.gradle".
+Simplicity
+    The underlying implementation can't be so complicated or rigid that
+    overriding the sensible defaults is too tedious.  Be wary of "opinionated"
+    frameworks that punish alternative strategies (like Apache Maven).
 
-    Simplicity
+Declarative-driven
+    Most modern build systems are declarative by design, but some are moreso
+    than others.  By definition, a build system does a lot of state-changing
+    activities.  When this state is not managed well, the build configuration
+    becomes cluttered with low-level conditional checks to chase the tail of
+    side effects.  Interestingly enough, the strategies used to manage state by
+    a good build system are exactly the same as the strategies an arbitrary
+    program should employ to manage state.  Declarative programming is a
+    powerful architecture.
 
-        The underlying implementation can't be so complicated or rigid that
-        overriding the sensible defaults is too tedious.  Be wary of
-        "opinionated" frameworks that punish alternative strategies (like
-        Apache Maven).
+Ease of Automated Testing
+    Writing quality code at scale can be hugely challenging without automated
+    tests.  It's important to have a build system that makes testing easy.
+    When testing is hard, people avoid it, and that's an unfortunate handicap
+    to endure in a modern day.
 
-    Declarative-driven
-
-        Most modern build systems are declarative by design, but some are
-        moreso than others.  By definition, a build system does a lot of
-        state-changing activities.  When this state is not managed well, the
-        build configuration becomes cluttered with low-level conditional checks
-        to chase the tail of side effects.  Interestingly enough, the
-        strategies used to manage state by a good build system are exactly the
-        same as the strategies an arbitrary program should employ to manage
-        state.  Declarative programming is a powerful architecture.
-
-    Ease of Automated Testing
-
-        Writing quality code at scale can be hugely challenging without
-        automated tests.  It's important to have a build system that makes
-        testing easy.  When testing is hard, people avoid it, and that's an
-        unfortunate handicap to endure in a modern day.
-
-    Community
-
-        It nice to have an active community to facilitate frequent releases and
-        defect fixes as well as support for all levels.  Common tools used by a
-        healthy community include good documentation, a mailing list, IRC
-        channel, and a defect tracker (all of which Gradle has).
+Community
+    It nice to have an active community to facilitate frequent releases and
+    defect fixes as well as support for all levels.  Common tools used by a
+    healthy community include good documentation, a mailing list, IRC channel,
+    and a defect tracker (all of which Gradle has).
 
 Most importantly, we are not blanketly advocating Gradle above all other tools.
 For Java there are some other tools with similar features including `Apache
@@ -81,12 +74,12 @@ Using the Skeleton Project
 
 Before you can use this project, you'll need
 
-    - a modern Java Developer Kit (JDK)
+- a modern Java Developer Kit (JDK)
 
-    - a stable version of Gradle (at least 1.0-milestone-6)
+- a stable version of Gradle (at least 1.0-milestone-6)
 
-    - an Internet connection (Gradle will download dependencies upon the first
-      execution)
+- an Internet connection (Gradle will download dependencies upon the first
+  execution)
 
 The most `popular provider of the JDK is Oracle
 <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_ (who
@@ -135,27 +128,21 @@ Some Details
 
 There's really only 5 files in this skeleton project:
 
-    README.rst
+README.rst
+    which you're reading now
 
-        which you're reading now
+build.gradle
+    the primary Gradle configuration file for this simple Java project
 
-    build.gradle
+.gitignore
+    which lists files built files generated from source by Gradle that you
+    often don't want to check into a source version control system like Git
 
-        the primary Gradle configuration file for this simple Java project
+src/main/java/org/atxsm/archetype/App.java
+    stub production code to get you started
 
-    .gitignore
-
-        which lists files built files generated from source by Gradle that you
-        often don't want to check into a source version control system like
-        Git
-
-    src/main/java/org/atxsm/archetype/App.java
-
-        stub production code to get you started
-
-    src/test/java/org/atxsm/archetype/AppTest.java
-
-        stub test code to get you started
+src/test/java/org/atxsm/archetype/AppTest.java
+    stub test code to get you started
 
 build.gradle has been lightly configured with a few conveniences (see in-line
 comments for more), but mostly, it's a default configuration.
