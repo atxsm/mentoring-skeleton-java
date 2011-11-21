@@ -1,0 +1,36 @@
+apply plugin: 'java'
+
+
+group = 'org.atxsm'
+archivesBaseName = 'mentoring-skeleton-java'
+version = '1.0.0-SNAPSHOT'
+
+
+sourceCompatibility = '1.5'
+
+
+defaultTasks 'clean', 'test'
+
+
+dependencies {
+    testCompile 'junit:junit:4.10'
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+
+test {
+
+    beforeTest { descriptor ->
+        logger.lifecycle("Running test: " + descriptor)
+    }
+
+    onOutput { descriptor, event ->
+        logger.lifecycle(
+            "Test: ${descriptor} produced standard out/err: ${event.message}")
+    }
+
+}
